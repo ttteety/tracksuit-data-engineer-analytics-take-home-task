@@ -1,0 +1,123 @@
+account_id,company_name,crmid,currency,created_at
+sub_98edab9547d40425,Aurora Holdings,hs_2ace05473e6ffe55,NZD,2023-12-25
+sub_c6f2c7e0c70ea994,Northwind Foods,hs_b0d8bb256354edba,AUD,2023-07-24
+sub_3a94604070d939dc,Manuka Trading,hs_3c2b69fc48ca0e1b,USD,2023-09-30
+sub_adbbced8587feb0a,Tuatara Holdings,hs_b54b37a0075819e8,USD,2023-10-07
+sub_52365ed8b4c3756f,Pinnacle Pet Co,hsold_4dc9208668259480,NZD,2024-03-14
+sub_03638b68798132cd,Harbourline Snacks,hs_78b4649009512b7b,USD,2023-07-14
+sub_a5614ebe48f8df0f,Quartz Group,hs_3109fd7c4e45b5a9,USD,2023-10-29
+sub_95dd23f581e3369e,Northwind Co,hs_96b3ad7889fd60e3,GBP,2023-06-07
+sub_b32c555b6f310d3a,Silverpine Pty,hs_6aac356b2ab0b1eb,AUD,2024-02-04
+sub_a7a7714c6f6e623f,Verdant Wines,hsold_dfb8743dfb64127c,NZD,2023-09-15
+sub_b3e99fe1b528effb,Northwind Pet Co,hs_5ae8c0eee455b42a,USD,2024-07-15
+sub_71061b907e4517a2,Silverpine Pty,hs_0fbfa38126673a90,NZD,2024-03-08
+sub_f86dc17c9a57d565,Quartz Pty,hs_1bc2bdc633626309,USD,2023-09-15
+sub_3d43affbeaf5bfac,Riverbend Snacks,hs_c95a8d20b240e1a5,NZD,2023-09-17
+sub_36b1cf01bd32bd2f,Driftwood Pty,hs_571f85640f04dd77,GBP,2024-04-28
+sub_f8426c08b3bbd87d,Slate & Co Collective,hs_118ab5304c9e7bf7,AUD,2023-10-26
+sub_42a3893529252e98,Meridian Media,hs_5cad01aa78d0a333,USD,2023-10-25
+sub_ba77dad4d3cc9ae0,Cobalt Pty,hs_3515b1f7b2e3a188,NZD,2023-11-14
+sub_33794e133723c3d8,Tuatara Partners,hs_bed32dde676e3bec,AUD,2023-08-22
+sub_3660e6311af1da55,Slate & Co Apparel,hs_abbc71b219ec1f5f,GBP,2023-12-05
+sub_1b9d3cbd45392538,Glasshouse Pty,hs_f8c9a029f94f3447,NZD,2023-10-02
+sub_69d9463b01c9a315,Maple Hollow Holdings,hs_3e8dda9594d040bb,AUD,2024-05-27
+sub_fb6dbb08135d109c,Thornbury Coffee,hs_ec0731ab44b1541b,AUD,2023-10-21
+sub_50a679a5cf031153,Foxglove Foods,hs_a758a09770bf6317,AUD,2023-11-10
+sub_fe0b1fe54edc1f84,Wrenfield Pty,hs_b39fc4b32cca8a5b,USD,2024-06-06
+sub_35b8d570e045e47a,Cascade Beverages,hs_5d4da2d5872628f5,GBP,2023-10-24
+sub_76639f0f138b190a,Ironbark Holdings,hs_7a514c60f58cbda0,GBP,2023-06-06
+sub_2c3865079063f359,Birchwood Logistics,hs_0bf04e0e878defdd,NZD,2023-09-22
+sub_c8815a926a546f1b,Harbourline Pet Co,hs_fefba59933d629ce,NZD,2023-08-12
+sub_ca86bb2658966407,Lumen Wines,hs_42362bbd025c8967,AUD,2024-01-06
+sub_14e6acefafd14132,Highgrove Coffee,hs_b5067b190785596c,GBP,2023-06-29
+sub_5e91937fdb7d9f31,Saltmarsh Pty,hs_6bcb545212b119a6,USD,2023-10-09
+sub_ff930f9579d59594,Meridian Pty,hs_44002d7788d5c786,AUD,2024-05-03
+sub_737e7452233c8dc4,Brightfern Pty,hsold_be2d8ba152ae295a,USD,2023-10-13
+sub_6956ab21f5984bfe,Slate & Co Brewing,hs_75f14da13dffd41a,USD,2024-05-13
+sub_1a29cb6a02de7c9c,Harbourline Trading,hs_e497b1d18104967e,GBP,2023-06-30
+sub_76deb2da145af73d,Lowtide Holdings,hsold_312f2fb641648ecf,USD,2023-11-05
+sub_8b1072edaaacb735,Maple Hollow Foods,hsold_d3c032a96f785baa,GBP,2023-11-22
+sub_8b54315fb3496ac6,Riverbend Coffee,hs_c145c0dc2e8f72c2,GBP,2024-05-24
+sub_c044c239e037a129,Kowhai Coffee,hs_95f1bfd40a26c175,AUD,2023-06-19
+sub_950237bee617c0a6,Thornbury Partners,hs_ade75017e422e974,USD,2024-04-19
+sub_0eee6648698b5a34,Pinnacle Pty,hs_1b993f5178c4ba86,NZD,2023-12-09
+sub_a50b58d10cd2c485,Foxglove Collective,hs_999cf3c86235a58b,USD,2024-01-09
+sub_b955bac822a907bd,Ironbark Trading,hs_2b7a5c9e43688ee9,AUD,2023-07-22
+sub_eb281f8b0cb35107,Kowhai Beverages,hs_f042aaaf54cb009a,GBP,2023-12-19
+sub_88b88cd1171f12ad,Birchwood Pty,hs_ebb2cdffa52c2b75,GBP,2024-05-09
+sub_a2b627c5e2dd0f36,Manuka Apparel,hs_07cbb7d153b0acc7,AUD,2024-06-08
+sub_48a38d7a4389c8ec,Daybreak Group,hs_bbbaa534cc65cc64,AUD,2023-10-15
+sub_75d50635e17f9275,Manuka Group,hs_c1037fb276442cdf,NZD,2024-04-27
+sub_f9b12dfa917069e8,Wrenfield Apparel,hs_38a1103d260e267a,GBP,2023-11-20
+sub_76086d2c256084e5,Harbourline Pty,hs_53c8697e7523ce72,USD,2024-03-10
+sub_056dda93fa1cd005,Birchwood Pty,hs_ba47d21aa47272e5,GBP,2024-07-02
+sub_ad76b97097958c73,Highgrove Pty,hs_7ca7ef4109cb0cab,AUD,2023-08-10
+sub_be7c0aca666beeae,Silverpine Outdoors,hs_61fce21aa3df8ca4,NZD,2023-08-18
+sub_a224139f014c3f6c,Maple Hollow Beverages,hs_51b7291093edc1a1,AUD,2024-02-29
+sub_15f155bca7c31319,Tuatara Foods,hs_483fba14d4e3f1f5,AUD,2024-06-26
+sub_5a66a7a111754399,Tuatara Pty,hs_b0b24907bf57a83b,USD,2024-04-26
+sub_9eaafa7f98e5a594,Cascade Pet Co,hs_f344f5f37b264614,USD,2023-09-26
+sub_a3fd2b7e4c37bb62,Ironbark Foods,hs_3627ab20b0838ab7,USD,2023-07-31
+sub_b6d910d132579e41,Cascade Snacks,hs_035f9b4efc8886ba,GBP,2023-09-10
+sub_b91b24b5c9d66031,Quartz Snacks,hs_39b2baf307d481ae,USD,2024-07-08
+sub_f89e85c54e7903f2,Maple Hollow Coffee,hs_396e17e17e09801f,USD,2024-03-17
+sub_566e8747aa31a8e5,Manuka Studio,hs_f972d35e036e2357,USD,2023-11-12
+sub_ebc8d2677d0c53d3,Verdant Outdoors,hs_e0b060d651965cb9,GBP,2024-04-17
+sub_7f07231f8e9a6b26,Harbourline Pty,hs_99aec7791c126996,NZD,2023-10-24
+sub_4c38346d56b24edd,Tuatara Collective,hs_4d5d26cca7d59b35,AUD,2023-08-28
+sub_6548b2624ddae818,Wrenfield Media,hs_3660a8cddd4c3294,USD,2023-07-18
+sub_13c0af28c9a3b165,Foxglove Co,hs_3025af4aac15cc78,USD,2023-12-22
+sub_a8255d29cf9f9689,Maple Hollow Logistics,hs_f93c2c49dfa3322a,USD,2024-08-01
+sub_b092cc4c5119ef88,Foxglove Beverages,hs_b2e09b67d5aa2785,USD,2024-02-05
+sub_422bce628fd125d2,Verdant Foods,hs_60e9850526e757e1,AUD,2024-02-05
+sub_8983a7e3772a56b4,Ironbark Pty,hs_09dd331c85b5bffc,NZD,2024-03-04
+sub_c9d993e492a5adb4,Pinnacle Holdings,hs_661c445a36f76d1d,AUD,2024-01-07
+sub_c1cdafdf1d383f8f,Slate & Co Foods,hs_96b7c8013208428b,NZD,2024-02-14
+sub_aefe19bdbaf62f92,Glasshouse Pty,hs_97704273036bc007,NZD,2024-01-07
+sub_fc8e18c95d1cc011,Quartz Collective,hs_793d95b4afa22d48,AUD,2024-05-17
+sub_c022531204754d35,Riverbend Labs,hs_9ec00a19250d65e6,USD,2023-07-10
+sub_d411cfcf3f7ddb9d,Cascade Pty,hs_c09abc478f740135,GBP,2023-11-21
+sub_8a64d3155c5c521f,Verdant Collective,hs_e16e1a587066845d,USD,2024-07-02
+sub_c5bab7fe7a6ba65b,Verdant Holdings,hs_d2383ca5494b1b68,AUD,2023-06-30
+sub_b6e9e2ce3a14dd6a,Lowtide Brewing,hs_2ab72168aef135b1,NZD,2024-05-01
+sub_0b46c2e4be790fd1,Daybreak Pty,hs_ef60d4fbc8c80e2c,AUD,2023-09-29
+sub_9e68abc97cd3cd99,Foxglove Partners,hs_418db2d84d120df9,AUD,2023-09-22
+sub_2b153a20fae706ea,Tuatara Coffee,hs_1beb37fbae0cfc9d,NZD,2024-02-13
+sub_2742e7e81a816136,Ironbark Skincare,hs_ead28a020ffe1330,NZD,2024-07-08
+sub_3a1a06d224a9730d,Birchwood Labs,hs_aaa54b4419abbd6a,USD,2023-12-29
+sub_e5a98587eb0fc573,Foxglove Apparel,hs_d1af0c035abe5851,NZD,2024-06-04
+sub_5c3998c5b570df19,Halcyon Labs,hsold_8ee2e8e7b60a9d20,NZD,2024-06-14
+sub_55eee92fc6368cb9,Glasshouse Coffee,hs_6e74137ceb9b391f,GBP,2024-03-13
+sub_6837e1912b4a16f6,Highgrove Brewing,hsold_44c2b26ee8d8f09b,USD,2023-08-01
+sub_9e6c984895da8280,Manuka Snacks,hsold_5030d65caf37bda4,USD,2024-02-08
+sub_e5b9f618f81c2805,Harbourline Co,hs_a84fdd08086ec8bb,GBP,2024-06-15
+sub_6262cd41dd2d6a41,Cascade Pty,hs_26ac33272805d8ee,USD,2024-05-29
+sub_20e88f45afa15f31,Daybreak Co,hs_2341fcf81c2062a6,NZD,2024-07-24
+sub_8ce36c22b3e6966c,Slate Pty,hs_fb42c7d0b5149170,USD,2023-12-05
+sub_fdcf3afd25db710a,Slate & Co Studio,hs_02e8b33df7db9fe4,AUD,2023-11-28
+sub_c371c5fe8c93b95d,Tuatara Outdoors,hs_d441b7847bfd3264,GBP,2024-02-27
+sub_032b786303f28468,Ironbark Pty,hs_980a206377a0e6c4,NZD,2023-11-21
+sub_e2260b8a7006da97,Driftwood Pty,hs_22fe65f9549dcdf0,USD,2024-03-13
+sub_c8eee31efecdc672,Lowtide Wines,hs_917b64236279081a,USD,2024-03-30
+sub_abbec44d8db76a46,Quartz Partners,hsold_a485639a96519a6f,AUD,2023-06-12
+sub_d478029282e08e73,Slate Pty,hsold_71f826c194f5a3db,GBP,2023-12-16
+sub_7ac60bd1cee59ed7,Meridian Brewing,hs_d564d59ad36823a7,GBP,2024-02-24
+sub_d4ff3dcef1b3854a,Riverbend Pty,hs_37986cc6473c7e0d,GBP,2023-11-03
+sub_0398cd2959110851,Riverbend Pty,hs_d7a55d8af8e2c259,AUD,2023-09-15
+sub_dce521525f100553,Harbourline Pty,hs_bb027c9880b352d5,GBP,2023-10-17
+sub_7c6c1480eaefa06b,Northwind Snacks,hs_39fd5add991cf4de,AUD,2023-07-28
+sub_68fc6949a2bc5871,Saltmarsh Trading,hs_9f4e98d63e0b8ce6,GBP,2023-11-04
+sub_fb35ffd9818bf0f0,Meridian Group,hs_b983c3da0647e1c2,USD,2023-06-19
+sub_11fc97bd2d0a753a,Manuka Co,hs_0e32bd3327b81b03,USD,2023-07-11
+sub_53da89a38ca40aff,Highgrove Pty,hs_3309bd7fd854be0c,GBP,2024-01-15
+sub_02b6a133c2c81f77,Lowtide Apparel,hs_3e4eca2d3dba7c55,USD,2024-02-15
+sub_d83e609561761ad6,Harbourline Skincare,hs_47391cc89374a324,AUD,2023-08-16
+sub_bdaf6f370b93b384,Manuka Foods,hs_0531c5ee938d1179,AUD,2023-09-06
+sub_9efc7f06849cdabf,Pinnacle Pty,hs_220b424ae4736840,AUD,2023-09-04
+sub_d1671c188e6afe1c,Tuatara Snacks,hs_1e7e764572cf5a53,GBP,2024-07-26
+sub_a33286795857dd2b,Saltmarsh Outdoors,hs_e6d24eb159d7215f,NZD,2024-05-08
+sub_7660eecf7e66d9cc,Manuka Pty,hs_9da5ee34ab353acc,AUD,2024-04-17
+sub_c098b07d05efaf05,Silverpine Pty,hsold_5be1dba75de7b2ce,NZD,2023-10-09
+sub_ce342c249aa85e98,Glasshouse Media,hs_c693a4d6059b45e5,USD,2023-08-30
+sub_965ffedd054b23d0,Wrenfield Brewing,hsmissing_eacda3728e16a0be,GBP,2024-03-30
+sub_a265f74e56329a5f,Riverbend Co,hsmissing_a216652bbe00fb88,AUD,2024-09-10

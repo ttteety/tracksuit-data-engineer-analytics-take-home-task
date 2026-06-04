@@ -1,0 +1,121 @@
+company_id,company_name,size_grouped,industry,country,merged_object_ids,created_at
+hs_2ace05473e6ffe55,Aurora Holdings,SMB,Food & Beverage,NZ,,2023-12-06
+hs_b0d8bb256354edba,Northwind Foods,SMB,Retail,AU,,2023-07-07
+hs_3c2b69fc48ca0e1b,Manuka Trading,SMB,Apparel,US,,2023-08-30
+hs_b54b37a0075819e8,Tuatara Holdings,SMB,Retail,US,,2023-08-30
+hs_fd1494ce6400e096,Pinnacle Pet Co,Enterprise,Consumer Goods,NZ,hsold_4dc9208668259480;hsold_f25f068ee3bc5776,2024-02-23
+hs_78b4649009512b7b,Harbourline Snacks,Mid-Market,Media,US,,2023-07-13
+hs_3109fd7c4e45b5a9,Quartz Group,Startup,Apparel,US,,2023-09-23
+hs_96b3ad7889fd60e3,Northwind Co,Mid-Market,Media,GB,,2023-06-06
+hs_6aac356b2ab0b1eb,Silverpine Trading,SMB,Media,AU,,2024-01-18
+hs_4c4f8fb9bb4054dc,Verdant Wines,Mid-Market,Food & Beverage,NZ,hsold_dfb8743dfb64127c,2023-09-04
+hs_5ae8c0eee455b42a,Northwind Pet Co,Enterprise,Telecommunications,US,,2024-06-17
+hs_0fbfa38126673a90,Silverpine Pet Co,Mid-Market,Consumer Goods,NZ,,2024-02-26
+hs_1bc2bdc633626309,Quartz Trading,SMB,Health & Beauty,US,,2023-08-19
+hs_c95a8d20b240e1a5,Riverbend Snacks,Mid-Market,Telecommunications,NZ,,2023-08-17
+hs_571f85640f04dd77,Driftwood Labs,SMB,Telecommunications,GB,,2024-03-29
+hs_118ab5304c9e7bf7,Slate & Co Collective,SMB,Technology,AU,,2023-10-05
+hs_5cad01aa78d0a333,Meridian Media,Mid-Market,Hospitality,US,,2023-10-19
+hs_3515b1f7b2e3a188,Cobalt Foods,Enterprise,Telecommunications,NZ,,2023-10-24
+hs_bed32dde676e3bec,Tuatara Partners,Mid-Market,Hospitality,AU,,2023-07-22
+hs_abbc71b219ec1f5f,Slate & Co Apparel,Startup,Technology,GB,,2023-11-10
+hs_f8c9a029f94f3447,Glasshouse Co,Startup,Hospitality,NZ,,2023-08-28
+hs_3e8dda9594d040bb,Maple Hollow Holdings,Mid-Market,Retail,AU,,2024-05-22
+hs_ec0731ab44b1541b,Thornbury Coffee,Startup,Consumer Goods,AU,,2023-10-01
+hs_a758a09770bf6317,Foxglove Foods,SMB,Technology,AU,,2023-10-16
+hs_b39fc4b32cca8a5b,Wrenfield Group,Startup,Consumer Goods,US,,2024-06-06
+hs_5d4da2d5872628f5,Cascade Beverages,Enterprise,Financial Services,GB,,2023-09-20
+hs_7a514c60f58cbda0,Ironbark Holdings,Mid-Market,Apparel,GB,,2023-06-03
+hs_0bf04e0e878defdd,Birchwood Logistics,SMB,Financial Services,NZ,,2023-08-30
+hs_fefba59933d629ce,Harbourline Pet Co,Startup,Apparel,NZ,,2023-07-12
+hs_42362bbd025c8967,Lumen Wines,SMB,Financial Services,AU,hsold_4bee4497f7beb97b,2023-12-24
+hs_b5067b190785596c,Highgrove Coffee,Mid-Market,Food & Beverage,GB,,2023-06-21
+hs_6bcb545212b119a6,Saltmarsh Partners,SMB,Technology,US,,2023-09-11
+hs_44002d7788d5c786,Meridian Co,Startup,Health & Beauty,AU,,2024-04-02
+hs_32552c46df8e54d6,Brightfern Trading,Enterprise,Technology,US,hsold_be2d8ba152ae295a;hsold_1301723bf7dc94f6,2023-09-05
+hs_75f14da13dffd41a,Slate & Co Brewing,Mid-Market,Retail,US,,2024-05-03
+hs_e497b1d18104967e,Harbourline Trading,Mid-Market,Media,GB,,2023-06-30
+hs_cd6373b36d206ab5,Lowtide Holdings,Mid-Market,Health & Beauty,US,hsold_312f2fb641648ecf,2023-10-29
+hs_46cfdca1af9f41af,Maple Hollow Foods,Startup,Hospitality,GB,hsold_d3c032a96f785baa,2023-11-13
+hs_c145c0dc2e8f72c2,Riverbend Coffee,Mid-Market,Consumer Goods,GB,,2024-05-06
+hs_95f1bfd40a26c175,Kowhai Coffee,Startup,Hospitality,AU,,2023-06-02
+hs_ade75017e422e974,Thornbury Partners,Enterprise,Telecommunications,US,,2024-03-20
+hs_1b993f5178c4ba86,Pinnacle Foods,SMB,Consumer Goods,NZ,,2023-11-24
+hs_999cf3c86235a58b,Foxglove Collective,Mid-Market,Food & Beverage,US,,2023-12-31
+hs_2b7a5c9e43688ee9,Ironbark Trading,Startup,Consumer Goods,AU,,2023-06-14
+hs_f042aaaf54cb009a,Kowhai Beverages,Enterprise,Technology,GB,,2023-12-11
+hs_ebb2cdffa52c2b75,Birchwood Pet Co,SMB,Hospitality,GB,,2024-04-22
+hs_07cbb7d153b0acc7,Manuka Apparel,Mid-Market,Hospitality,AU,,2024-05-13
+hs_bbbaa534cc65cc64,Daybreak Group,SMB,Financial Services,AU,,2023-09-13
+hs_c1037fb276442cdf,Manuka Group,Mid-Market,Consumer Goods,NZ,,2024-04-27
+hs_38a1103d260e267a,Wrenfield Apparel,Mid-Market,Telecommunications,GB,,2023-11-01
+hs_53c8697e7523ce72,Harbourline Partners,SMB,Health & Beauty,US,,2024-02-02
+hs_ba47d21aa47272e5,Birchwood Snacks,SMB,Hospitality,GB,,2024-06-01
+hs_7ca7ef4109cb0cab,Highgrove Apparel,SMB,Health & Beauty,AU,,2023-07-13
+hs_61fce21aa3df8ca4,Silverpine Outdoors,Enterprise,Media,NZ,,2023-07-27
+hs_51b7291093edc1a1,Maple Hollow Beverages,Startup,Telecommunications,AU,,2024-01-26
+hs_483fba14d4e3f1f5,Tuatara Foods,SMB,Health & Beauty,AU,,2024-06-06
+hs_b0b24907bf57a83b,Tuatara Trading,Startup,Retail,US,,2024-04-11
+hs_f344f5f37b264614,Cascade Pet Co,Startup,Consumer Goods,US,,2023-09-12
+hs_3627ab20b0838ab7,Ironbark Foods,Mid-Market,Retail,US,hsold_bd0dac84a64400f7,2023-07-11
+hs_035f9b4efc8886ba,Cascade Snacks,SMB,Consumer Goods,GB,,2023-08-17
+hs_39b2baf307d481ae,Quartz Snacks,SMB,Consumer Goods,US,,2024-06-29
+hs_396e17e17e09801f,Maple Hollow Coffee,Startup,Media,US,,2024-03-15
+hs_f972d35e036e2357,Manuka Studio,Startup,Hospitality,US,,2023-10-06
+hs_e0b060d651965cb9,Verdant Outdoors,Mid-Market,Retail,GB,,2024-04-11
+hs_99aec7791c126996,Harbourline Group,Mid-Market,Consumer Goods,NZ,,2023-09-26
+hs_4d5d26cca7d59b35,Tuatara Collective,Mid-Market,Apparel,AU,,2023-07-30
+hs_3660a8cddd4c3294,Wrenfield Media,SMB,Consumer Goods,US,,2023-07-09
+hs_3025af4aac15cc78,Foxglove Co,Mid-Market,Financial Services,US,,2023-12-13
+hs_f93c2c49dfa3322a,Maple Hollow Logistics,Startup,Food & Beverage,US,,2024-07-16
+hs_b2e09b67d5aa2785,Foxglove Beverages,Startup,Hospitality,US,,2024-01-11
+hs_60e9850526e757e1,Verdant Foods,SMB,Consumer Goods,AU,,2024-01-15
+hs_09dd331c85b5bffc,Ironbark Labs,Mid-Market,Media,NZ,,2024-01-30
+hs_661c445a36f76d1d,Pinnacle Holdings,SMB,Financial Services,AU,,2023-12-18
+hs_96b7c8013208428b,Slate & Co Foods,Startup,Consumer Goods,NZ,,2024-01-14
+hs_97704273036bc007,Glasshouse Brewing,SMB,Food & Beverage,NZ,,2024-01-05
+hs_793d95b4afa22d48,Quartz Collective,Mid-Market,Media,AU,,2024-05-02
+hs_9ec00a19250d65e6,Riverbend Labs,Mid-Market,Health & Beauty,US,,2023-06-22
+hs_c09abc478f740135,Cascade Foods,SMB,Financial Services,GB,,2023-11-16
+hs_e16e1a587066845d,Verdant Collective,Mid-Market,Retail,US,,2024-06-26
+hs_d2383ca5494b1b68,Verdant Holdings,Enterprise,Technology,AU,,2023-06-24
+hs_2ab72168aef135b1,Lowtide Brewing,SMB,Food & Beverage,NZ,,2024-04-12
+hs_ef60d4fbc8c80e2c,Daybreak Skincare,Startup,Telecommunications,AU,,2023-09-27
+hs_418db2d84d120df9,Foxglove Partners,SMB,Retail,AU,,2023-09-19
+hs_1beb37fbae0cfc9d,Tuatara Coffee,SMB,Apparel,NZ,,2024-01-21
+hs_ead28a020ffe1330,Ironbark Skincare,Startup,Retail,NZ,,2024-06-23
+hs_aaa54b4419abbd6a,Birchwood Labs,SMB,Financial Services,US,,2023-11-23
+hs_d1af0c035abe5851,Foxglove Apparel,Enterprise,Health & Beauty,NZ,,2024-05-24
+hs_d1e90a95b5d52cff,Halcyon Labs,Startup,Telecommunications,NZ,hsold_8ee2e8e7b60a9d20,2024-05-21
+hs_6e74137ceb9b391f,Glasshouse Coffee,Mid-Market,Financial Services,GB,,2024-02-27
+hs_8c0fed53c442b05c,Highgrove Brewing,SMB,Food & Beverage,US,hsold_44c2b26ee8d8f09b;hsold_1dfb10633d0fbbc4,2023-07-18
+hs_7d10c433ae9d9243,Manuka Snacks,SMB,Technology,US,hsold_5030d65caf37bda4,2024-01-23
+hs_a84fdd08086ec8bb,Harbourline Co,SMB,Consumer Goods,GB,,2024-05-17
+hs_26ac33272805d8ee,Cascade Outdoors,SMB,Media,US,,2024-04-25
+hs_2341fcf81c2062a6,Daybreak Co,Mid-Market,Health & Beauty,NZ,,2024-06-26
+hs_fb42c7d0b5149170,Slate & Co Pet Co,Mid-Market,Media,US,,2023-10-29
+hs_02e8b33df7db9fe4,Slate & Co Studio,SMB,Technology,AU,,2023-11-01
+hs_d441b7847bfd3264,Tuatara Outdoors,Mid-Market,Hospitality,GB,,2024-01-29
+hs_980a206377a0e6c4,Ironbark Collective,SMB,Hospitality,NZ,,2023-11-09
+hs_22fe65f9549dcdf0,Driftwood Skincare,Enterprise,Financial Services,US,,2024-02-12
+hs_917b64236279081a,Lowtide Wines,SMB,Media,US,,2024-03-06
+hs_3d12143d9f4d254d,Quartz Partners,Mid-Market,Financial Services,AU,hsold_a485639a96519a6f;hsold_7ee90fa2cd304576,2023-05-25
+hs_0a9ea6ea34f605fd,Slate & Co Partners,Mid-Market,Consumer Goods,GB,hsold_71f826c194f5a3db,2023-11-21
+hs_d564d59ad36823a7,Meridian Brewing,Mid-Market,Media,GB,,2024-01-19
+hs_37986cc6473c7e0d,Riverbend Skincare,Mid-Market,Health & Beauty,GB,,2023-10-31
+hs_d7a55d8af8e2c259,Riverbend Holdings,Startup,Apparel,AU,,2023-08-15
+hs_bb027c9880b352d5,Harbourline Apparel,Mid-Market,Telecommunications,GB,,2023-09-29
+hs_39fd5add991cf4de,Northwind Snacks,Mid-Market,Technology,AU,,2023-07-14
+hs_9f4e98d63e0b8ce6,Saltmarsh Trading,SMB,Apparel,GB,,2023-10-13
+hs_b983c3da0647e1c2,Meridian Group,SMB,Apparel,US,,2023-06-07
+hs_0e32bd3327b81b03,Manuka Co,SMB,Media,US,,2023-07-03
+hs_3309bd7fd854be0c,Highgrove Group,Mid-Market,Food & Beverage,GB,hsold_aed1e3657fa79eb1,2024-01-13
+hs_3e4eca2d3dba7c55,Lowtide Apparel,Startup,Financial Services,US,,2024-01-18
+hs_47391cc89374a324,Harbourline Skincare,SMB,Food & Beverage,AU,,2023-07-24
+hs_0531c5ee938d1179,Manuka Foods,Startup,Retail,AU,,2023-09-01
+hs_220b424ae4736840,Pinnacle Outdoors,SMB,Telecommunications,AU,,2023-08-15
+hs_1e7e764572cf5a53,Tuatara Snacks,Mid-Market,Media,GB,,2024-07-15
+hs_e6d24eb159d7215f,Saltmarsh Outdoors,Mid-Market,Telecommunications,NZ,,2024-04-04
+hs_9da5ee34ab353acc,Manuka Outdoors,Startup,Health & Beauty,AU,,2024-03-25
+hs_39dc22cbecdc01e8,Silverpine Holdings,Mid-Market,Apparel,NZ,hsold_5be1dba75de7b2ce;hsold_143bf5cfb3aa33f3,2023-09-29
+hs_c693a4d6059b45e5,Glasshouse Media,SMB,Telecommunications,US,,2023-07-31

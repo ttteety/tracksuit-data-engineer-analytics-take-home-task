@@ -1,0 +1,10 @@
+# DuckDB profile for the take-home. No warehouse account or credentials needed.
+# dbt reads/writes the same local tracksuit.duckdb file that load_raw_data.py created.
+tracksuit_take_home:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: tracksuit.duckdb
+      schema: analytics
+      threads: 4
