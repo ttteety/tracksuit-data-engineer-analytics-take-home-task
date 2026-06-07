@@ -84,8 +84,9 @@ models:
         tests:
           - not_null
           - relationships:
-              to: ref('dim_customers')
-              field: customer_key
+              arguments:
+                to: ref('dim_customers')
+                field: customer_key
       - name: account_id
         description: Natural key of the owning account, for source traceability.
       - name: subscription_state
@@ -108,8 +109,9 @@ models:
         description: Predecessor subscription id when this term is a renewal.
         tests:
           - relationships:
-              to: ref('dim_subscriptions')
-              field: subscription_id
+              arguments:
+                to: ref('dim_subscriptions')
+                field: subscription_id
       - name: is_renewal
         description: True when this subscription renewed a previous term.
         tests:
@@ -139,8 +141,9 @@ models:
         tests:
           - not_null
           - relationships:
-              to: ref('dim_subscriptions')
-              field: subscription_key
+              arguments:
+                to: ref('dim_subscriptions')
+                field: subscription_key
       - name: subscription_id
         description: Natural business key of the subscription (degenerate dimension — filter without joining dim_subscriptions).
         tests:
@@ -150,8 +153,9 @@ models:
         tests:
           - not_null
           - relationships:
-              to: ref('dim_customers')
-              field: customer_key
+              arguments:
+                to: ref('dim_customers')
+                field: customer_key
       - name: account_id
         description: Natural business key of the account (degenerate dimension — filter without joining dim_customers).
         tests:

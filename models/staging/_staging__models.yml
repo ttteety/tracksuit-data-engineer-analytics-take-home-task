@@ -68,8 +68,9 @@ models:
         tests:
           - not_null
           - relationships:
-              to: ref('stg_subskribe__accounts')
-              field: account_id
+              arguments:
+                to: ref('stg_subskribe__accounts')
+                field: account_id
       - name: subscription_state
         description: Current lifecycle state of the subscription (point-in-time as of the data extract).
         tests:
@@ -109,15 +110,17 @@ models:
         tests:
           - not_null
           - relationships:
-              to: ref('stg_subskribe__accounts')
-              field: account_id
+              arguments:
+                to: ref('stg_subskribe__accounts')
+                field: account_id
       - name: subscription_id
         description: Billed subscription.
         tests:
           - not_null
           - relationships:
-              to: ref('stg_subskribe__subscriptions')
-              field: subscription_id
+              arguments:
+                to: ref('stg_subskribe__subscriptions')
+                field: subscription_id
       - name: invoice_date
         description: Issue date. Can precede the subscription start_date by up to 29 days (advance billing) but never falls in an earlier calendar month.
         tests:

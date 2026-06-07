@@ -10,8 +10,8 @@ dbt deps                    # installs dbt_utils
 dbt build                   # builds all models and runs all tests
 ```
 
-`dbt build` creates 10 models in the `analytics` schema and runs 73 tests. The
-reporting model is `analytics.rpt_grr_by_size_segment` — monthly GRR by customer
+`dbt build` creates 10 models across the `staging`, `intermediate`, and `marts` schemas and runs 73 tests. The
+reporting model is `marts.rpt_grr_by_size_segment` — monthly GRR by customer
 size segment for the 12 months ending at the data horizon (May 2026). Numbers are
 identical regardless of when you run it (see assumption 6).
 
@@ -61,9 +61,9 @@ identical regardless of when you run it (see assumption 6).
    `total_amount` + `invoice_currency`, and the account's `billing_currency` is on
    `dim_customers` — so adding an fx-rate dimension later is an intermediate-layer
    change, not a remodel.
-9. **Reusability** I deliberately modeled a monthly subscription fact table because GRR is only one retention metric.
+9. **Reusability:** I deliberately modeled a monthly subscription fact table because GRR is only one retention metric.
    The same model can be reused to calculate churn, NRR (Net Revenue Retention), cohort retention, customer lifecycle
-   metrics and revenue trend analysis.
+   metrics, and revenue trend analysis.
 10. **FX fluctuations** Revenue retention is calculated using `revenue_nzd` as it is Tracksuit's functional currency.
     This approach reflects retained reported revenue but may be affected by FX flucations. If the business wises to
     isolate customer retention from currency movements, GRR could alternatively be calculated in local currency
