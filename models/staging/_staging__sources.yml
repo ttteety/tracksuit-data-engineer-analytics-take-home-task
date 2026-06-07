@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+  - name: hubspot
+    description: CRM company records, landed as-is (all VARCHAR) by load_raw_data.py.
+    schema: raw
+    tables:
+      - name: hubspot_companies
+        description: One row per HubSpot company. merged_object_ids holds semicolon-separated old company IDs merged into this record.
+
+  - name: subskribe
+    description: Billing system (accounts, subscriptions, invoices), landed as-is (all VARCHAR) by load_raw_data.py.
+    schema: raw
+    tables:
+      - name: subskribe_accounts
+        description: One row per billing account. crmid references a HubSpot company_id — possibly a merged-away one.
+      - name: subskribe_subscriptions
+        description: One row per subscription term. Renewals are new rows linked via renewed_from_subscription_id.
+      - name: subskribe_invoices
+        description: One row per issued invoice. Monthly cadence, billed on days 1–6. total_nzd is the NZD-converted amount.

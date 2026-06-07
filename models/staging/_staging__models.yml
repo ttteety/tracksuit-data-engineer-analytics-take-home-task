@@ -1,0 +1,141 @@
+version: 2
+
+models:
+  - name: stg_hubspot__companies
+    description: >
+      HubSpot company records, 1:1 with raw.hubspot_companies. Typed and renamed only.
+      Some rows carry merged_object_ids — semicolon-separated old company IDs merged into
+      the surviving record; int_company_id_map explodes these for CRM-link resolution.
+    columns:
+      - name: company_id
+        description: Unique HubSpot company id (PK).
+        tests:
+          - unique
+          - not_null
+      - name: company_name
+        description: Company display name in HubSpot.
+      - name: size_grouped
+        description: Customer size segment assigned in the CRM.
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['Enterprise', 'Mid-Market', 'SMB', 'Startup']
+      - name: industry
+        description: Industry classification.
+      - name: country
+        description: HQ country code.
+      - name: merged_object_ids
+        description: Semicolon-separated old HubSpot company IDs merged into this record. NULL when no merges happened.
+      - name: created_at
+        description: Date the company record was created in HubSpot. Source provides date precision only.
+
+  - name: stg_subskribe__accounts
+    description: >
+      Subskribe billing accounts, 1:1 with raw.subskribe_accounts. The account is the
+      paying entity and becomes the grain of dim_customers.
+    columns:
+      - name: account_id
+        description: Unique Subskribe account id (PK).
+        tests:
+          - unique
+          - not_null
+      - name: account_name
+        description: Billing account display name. Often but not always matches the HubSpot company name — crm_company_id is the link, not the name.
+      - name: crm_company_id
+        description: >
+          Reference to a HubSpot company_id. May point at a merged-away (hsold_*) or
+          missing (hsmissing_*) id — resolution happens in int_company_id_map.
+        tests:
+          - not_null
+      - name: billing_currency
+        description: Account billing currency (NZD/USD/GBP/AUD).
+      - name: created_at
+        description: Date the account was created in Subskribe. Source provides date precision only.
+
+  - name: stg_subskribe__subscriptions
+    description: >
+      Subscription terms, 1:1 with raw.subskribe_subscriptions. Renewals create a new
+      row linked to the predecessor via renewed_from_subscription_id; chains never
+      overlap in dates.
+    columns:
+      - name: subscription_id
+        description: Unique subscription id (PK).
+        tests:
+          - unique
+          - not_null
+      - name: account_id
+        description: Owning billing account.
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_subskribe__accounts')
+              field: account_id
+      - name: subscription_state
+        description: Current lifecycle state of the subscription (point-in-time as of the data extract).
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['ACTIVE', 'CANCELED', 'EXPIRED']
+      - name: start_date
+        description: Subscription term start.
+        tests:
+          - not_null
+      - name: end_date
+        description: Subscription term end (actual or scheduled).
+        tests:
+          - not_null
+      - name: cancelled_date
+        description: Cancellation date when state is CANCELED; NULL otherwise. No invoices exist after this date.
+      - name: renewed_from_subscription_id
+        description: Predecessor subscription when this row is a renewal; NULL for first terms.
+      - name: created_at
+        description: Source row creation timestamp.
+      - name: updated_at
+        description: Source row last-modified timestamp.
+
+  - name: stg_subskribe__invoices
+    description: >
+      Issued invoices, 1:1 with raw.subskribe_invoices. Cleanly monthly — at most one
+      invoice per subscription per calendar month; in the current extract, invoices fall
+      on days 1–6 of the month. VOIDED invoices were never re-issued.
+    columns:
+      - name: invoice_id
+        description: Unique invoice id (PK).
+        tests:
+          - unique
+          - not_null
+      - name: account_id
+        description: Billed account.
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_subskribe__accounts')
+              field: account_id
+      - name: subscription_id
+        description: Billed subscription.
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_subskribe__subscriptions')
+              field: subscription_id
+      - name: invoice_date
+        description: Issue date. Can precede the subscription start_date by up to 29 days (advance billing) but never falls in an earlier calendar month.
+        tests:
+          - not_null
+      - name: total_amount
+        description: Invoice amount in the account's billing currency.
+        tests:
+          - not_null
+      - name: total_nzd
+        description: Invoice amount converted to NZD (Tracksuit's functional currency). The only amount used downstream.
+        tests:
+          - not_null
+      - name: invoice_currency
+        description: Invoice currency code.
+      - name: status
+        description: Invoice lifecycle status. Revenue downstream counts PAID + POSTED; VOIDED is excluded.
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['PAID', 'POSTED', 'VOIDED']

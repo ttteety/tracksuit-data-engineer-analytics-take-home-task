@@ -1,0 +1,170 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: >
+      The paying entity — a Subskribe billing account enriched with HubSpot company
+      attributes. Grain: one row per account. CRM links are resolved through
+      int_company_id_map so merged-away HubSpot ids land on the surviving company;
+      genuinely unmatchable accounts carry size_grouped = 'Unknown' and
+      crm_match_status = 'unmatched'. Customer identity is the GRR cohort identity:
+      it persists across subscription renewals.
+    columns:
+      - name: customer_key
+        description: Surrogate key from account_id (PK).
+        tests:
+          - unique
+          - not_null
+      - name: account_id
+        description: Natural key — the Subskribe account id.
+        tests:
+          - unique
+          - not_null
+      - name: company_id
+        description: >
+          Resolved HubSpot company id. NULL for unmatched accounts. Intentionally no
+          relationships test here — it's a nullable enrichment attribute, and integrity
+          is already enforced upstream by int_company_id_map's relationships test.
+      - name: customer_name
+        description: HubSpot company name, falling back to the billing account name when unmatched.
+        tests:
+          - not_null
+      - name: account_name
+        description: Subskribe billing account name (kept alongside for reconciliation against the CRM name).
+      - name: size_grouped
+        description: >
+          Customer size segment. 'Unknown' = the CRM link is unresolvable, so size is
+          genuinely unknowable; these rows appear in GRR output where they have cohort
+          revenue, as an actionable data quality flag.
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['Enterprise', 'Mid-Market', 'SMB', 'Startup', 'Unknown']
+      - name: industry
+        description: HubSpot industry classification. NULL when unmatched.
+      - name: country
+        description: HubSpot HQ country. NULL when unmatched.
+      - name: billing_currency
+        description: Account billing currency. Revenue measures are always NZD regardless.
+      - name: crm_match_status
+        description: >
+          How the CRM link resolved — 'matched' (crmid is a live company id),
+          'merged_resolved' (crmid pointed at a merged-away id, resolved via
+          merged_object_ids), or 'unmatched' (no company record exists).
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['matched', 'merged_resolved', 'unmatched']
+      - name: account_created_at
+        description: Date the billing account was created in Subskribe.
+      - name: company_created_at
+        description: Date the company record was created in HubSpot. NULL when unmatched.
+
+  - name: dim_subscriptions
+    description: >
+      Subscription terms with static attributes and renewal lineage. Grain: one row
+      per subscription. subscription_state is the current state as of the data
+      extract; point-in-time state for any month is derivable from
+      start_date / end_date / cancelled_date. Renewal chains never overlap in dates.
+    columns:
+      - name: subscription_key
+        description: Surrogate key from subscription_id (PK).
+        tests:
+          - unique
+          - not_null
+      - name: subscription_id
+        description: Natural key — the Subskribe subscription id.
+        tests:
+          - unique
+          - not_null
+      - name: customer_key
+        description: Owning customer.
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_customers')
+              field: customer_key
+      - name: account_id
+        description: Natural key of the owning account, for source traceability.
+      - name: subscription_state
+        description: Current lifecycle state (ACTIVE / CANCELED / EXPIRED) as of the extract.
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['ACTIVE', 'CANCELED', 'EXPIRED']
+      - name: start_date
+        description: Term start date.
+        tests:
+          - not_null
+      - name: end_date
+        description: Term end date (actual or scheduled).
+        tests:
+          - not_null
+      - name: cancelled_date
+        description: Cancellation date when CANCELED; NULL otherwise. Billing stops after this date.
+      - name: renewed_from_subscription_id
+        description: Predecessor subscription id when this term is a renewal.
+        tests:
+          - relationships:
+              to: ref('dim_subscriptions')
+              field: subscription_id
+      - name: is_renewal
+        description: True when this subscription renewed a previous term.
+        tests:
+          - not_null
+
+  - name: fct_subscription_months
+    description: >
+      Monthly snapshot fact of subscriptions over time. Grain: one row per
+      subscription per active calendar month. A subscription was active in month M
+      if and only if a row exists for it — "subscriptions as of any given month" is
+      a simple equality filter. Revenue is invoiced truth (PAID + POSTED, NZD),
+      never imputed: voided-only months show revenue_nzd = 0 with
+      voided_invoice_count = 1 (see ADR 0001). Renewal boundary months legitimately
+      hold two rows for one customer (old term's last bill + new term's first bill).
+    columns:
+      - name: subscription_month_key
+        description: Surrogate key from (subscription_id, month_start_date) (PK).
+        tests:
+          - unique
+          - not_null
+      - name: month_start_date
+        description: First day of the active calendar month.
+        tests:
+          - not_null
+      - name: subscription_key
+        description: The subscription this month belongs to.
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_subscriptions')
+              field: subscription_key
+      - name: subscription_id
+        description: Natural business key of the subscription (degenerate dimension — filter without joining dim_subscriptions).
+        tests:
+          - not_null
+      - name: customer_key
+        description: The paying customer (denormalized for one-join analysis).
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_customers')
+              field: customer_key
+      - name: account_id
+        description: Natural business key of the account (degenerate dimension — filter without joining dim_customers).
+        tests:
+          - not_null
+      - name: revenue_nzd
+        description: Non-voided (PAID + POSTED) invoiced NZD in this month. 0 for voided-only months — never imputed.
+        tests:
+          - not_null
+      - name: invoice_count
+        description: PAID + POSTED invoices in this month (0 or 1 in practice).
+        tests:
+          - not_null
+      - name: voided_invoice_count
+        description: Voided invoices in this month (0 or 1 in practice). A 1 here with revenue 0 marks a voided-month revenue hole.
+        tests:
+          - not_null

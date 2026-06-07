@@ -4,18 +4,29 @@ config-version: 2
 
 profile: 'tracksuit_take_home'
 
-model-paths: ["models"]
-analysis-paths: ["analyses"]
-test-paths: ["tests"]
-macro-paths: ["macros"]
-snapshot-paths: ["snapshots"]
+model-paths: ['models']
+analysis-paths: ['analyses']
+test-paths: ['tests']
+macro-paths: ['macros']
+snapshot-paths: ['snapshots']
 
-target-path: "target"
+target-path: 'target'
 clean-targets:
-  - "target"
-  - "dbt_packages"
+  - 'target'
+  - 'dbt_packages'
 
 # How you organise, layer, name, and materialise your models is up to you.
+# Staging stays as views (project default — thin 1:1 typed mappings). Intermediate
+# and marts are tables: intermediate holds the month spine the fact builds on, and
+# marts are the queried-by-humans layer; everything rebuilds cheaply at this scale.
 models:
   tracksuit_take_home:
     +materialized: view
+    staging:
+      +schema: staging
+    intermediate:
+      +schema: intermediate
+      +materialized: table
+    marts:
+      +schema: marts
+      +materialized: table

@@ -1,0 +1,11 @@
+# local artifacts — reviewers regenerate these via load_raw_data.py + dbt build
+tracksuit.duckdb
+tracksuit.duckdb.wal
+target/
+dbt_packages/
+logs/
+.venv/
+.user.yml
+.DS_Store
+dbt_internal_packages/
+.claude

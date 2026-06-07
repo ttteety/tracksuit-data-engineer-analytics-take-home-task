@@ -1,0 +1,47 @@
+version: 2
+
+models:
+  - name: rpt_grr_by_size_segment
+    description: >
+      Monthly Gross Revenue Retention by customer size segment for the last 12
+      months, anchored on the data horizon (latest fact month) for reproducibility.
+      Grain: month x size segment. SPARSE BY CONTRACT: a row exists only where the
+      segment had cohort revenue at M-12; an absent row means GRR is undefined
+      there, and grr_pct is never NULL. The 'Unknown' segment appears where its
+      customers have cohort revenue — revenue is never silently dropped from a
+      retention report. Cohort membership and the expansion cap both read
+      fct_subscription_months.revenue_nzd, per Tracksuit's working GRR definition.
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - month_start_date
+            - size_grouped
+      - dbt_utils.expression_is_true:
+          expression: "grr_pct <= 100"
+      - dbt_utils.expression_is_true:
+          expression: "grr_pct >= 0"
+    columns:
+      - name: month_start_date
+        description: First day of the report month M.
+        tests:
+          - not_null
+      - name: size_grouped
+        description: Customer size segment (Enterprise / Mid-Market / SMB / Startup / Unknown).
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['Enterprise', 'Mid-Market', 'SMB', 'Startup', 'Unknown']
+      - name: cohort_customer_count
+        description: Customers in this segment who were paying at M-12 (the fixed cohort).
+      - name: cohort_revenue_nzd
+        description: The cohort's revenue at M-12 — the GRR denominator.
+      - name: retained_revenue_nzd
+        description: The cohort's month-M revenue, capped per customer at their M-12 amount — the GRR numerator.
+      - name: grr_pct
+        description: >
+          Gross Revenue Retention percentage. Bounded [0, 100]: the per-customer
+          LEAST cap prevents expansion (upper bound); coalesce to 0 for absent
+          months prevents negative values (lower bound).
+        tests:
+          - not_null

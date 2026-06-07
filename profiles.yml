@@ -6,5 +6,4 @@ tracksuit_take_home:
     dev:
       type: duckdb
       path: tracksuit.duckdb
-      schema: analytics
       threads: 4

@@ -1,0 +1,68 @@
+version: 2
+
+models:
+  - name: int_company_id_map
+    description: >
+      Lookup from any HubSpot company id an account might reference (live, or
+      merged-away via merged_object_ids) to the surviving company_id. One row per
+      referenceable id — live ids map to themselves, exploded merged ids map to
+      their survivor. Accounts whose crm_company_id is absent from this map (the
+      hsmissing_* ids) are genuinely unmatchable.
+    columns:
+      - name: crm_company_id
+        description: A HubSpot company id as it may appear in subskribe_accounts.crmid (PK).
+        tests:
+          - unique
+          - not_null
+      - name: company_id
+        description: The surviving HubSpot company record this id resolves to.
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_hubspot__companies')
+                field: company_id
+
+  - name: int_subscription_months
+    description: >
+      Bounded month spine per subscription with monthly invoice aggregates. Grain:
+      subscription x active calendar month. Active = start month through the
+      earliest of end month, cancelled month, and the data horizon (latest invoice
+      month). revenue_nzd is non-voided (PAID + POSTED) invoiced NZD only —
+      voided-only months show 0 revenue with voided_invoice_count = 1 (see ADR
+      0001: revenue is invoiced truth, never imputed).
+    columns:
+      - name: subscription_id
+        description: Subscription this month belongs to.
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_subskribe__subscriptions')
+                field: subscription_id
+      - name: account_id
+        description: Owning account, carried through for the fact's customer key.
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_subskribe__accounts')
+                field: account_id
+      - name: month_start_date
+        description: First day of the active calendar month.
+        tests:
+          - not_null
+      - name: revenue_nzd
+        description: Non-voided invoiced NZD in this month. 0 for voided-only months.
+        tests:
+          - not_null
+      - name: invoice_count
+        description: Count of PAID + POSTED invoices this month (0 or 1 in practice).
+      - name: voided_invoice_count
+        description: Count of voided invoices this month (0 or 1 in practice).
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - subscription_id
+              - month_start_date
